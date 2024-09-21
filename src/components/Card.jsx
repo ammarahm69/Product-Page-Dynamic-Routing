@@ -3,7 +3,7 @@ import Baackground from "../assets/bg.jpg";
 import Profile from "../assets/man.avif";
 import { userData } from "../utils/data";
 import { FaRegUser } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 
 function Card() {
   return (
@@ -17,8 +17,7 @@ function Card() {
           {/* Profile div */}
           <div>
             <img
-              src={item.profileImage || <FaRegUser />
-              }
+              src={item.profileImage || <FaRegUser />}
               alt="Profile"
               className="w-24 h-24 rounded-full absolute top-24 left-20 border-4"
             />
@@ -37,7 +36,9 @@ function Card() {
             </div>
             {/* View Profile Button */}
             <div className="p-1 bg-[#3D7793] rounded-lg text-white mt-10 px-5">
-              <button>View Profile</button>
+              <Link to={`/user/${item.id}`}>
+                <button>View Profile</button>
+              </Link>
             </div>
           </div>
         </div>
